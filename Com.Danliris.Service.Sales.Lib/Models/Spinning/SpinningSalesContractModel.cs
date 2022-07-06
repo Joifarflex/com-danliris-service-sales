@@ -133,5 +133,6 @@ namespace Com.Danliris.Service.Sales.Lib.Models.Spinning
         public int LatePayment { get; set; }
         public int LateReturn { get; set; }
         public double? Claim { get; set; }
+
     }
 }

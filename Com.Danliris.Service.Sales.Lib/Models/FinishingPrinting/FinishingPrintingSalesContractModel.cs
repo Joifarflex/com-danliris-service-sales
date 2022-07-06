@@ -192,6 +192,7 @@ namespace Com.Danliris.Service.Sales.Lib.Models.FinishingPrinting
         public int LatePayment { get; set; }
         public int LateReturn { get; set; }
         public double? Claim { get; set; }
+
         public virtual ICollection<FinishingPrintingSalesContractDetailModel> Details { get; set; }
     }
 }

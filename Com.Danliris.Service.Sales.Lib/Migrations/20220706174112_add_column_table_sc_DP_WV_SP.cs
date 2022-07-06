@@ -2,261 +2,243 @@
 
 namespace Com.Danliris.Service.Sales.Lib.Migrations
 {
-    public partial class Add_Table_Sales_Contract_DP_WV : Migration
+    public partial class add_column_table_sc_DP_WV_SP : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<string>(
-                name: "BuyerJob",
+            migrationBuilder.AddColumn<double>(
+                name: "Claim",
                 table: "WeavingSalesContract",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "MaterialCode",
-                table: "WeavingSalesContract",
-                maxLength: 25,
                 nullable: true);
 
             migrationBuilder.AddColumn<int>(
-                name: "MaterialID",
+                name: "Day",
                 table: "WeavingSalesContract",
                 nullable: false,
                 defaultValue: 0);
 
             migrationBuilder.AddColumn<string>(
-                name: "MaterialName",
+                name: "DownPayments",
                 table: "WeavingSalesContract",
-                maxLength: 255,
+                nullable: true);
+
+            migrationBuilder.AddColumn<int>(
+                name: "LatePayment",
+                table: "WeavingSalesContract",
+                nullable: false,
+                defaultValue: 0);
+
+            migrationBuilder.AddColumn<int>(
+                name: "LateReturn",
+                table: "WeavingSalesContract",
+                nullable: false,
+                defaultValue: 0);
+
+            migrationBuilder.AddColumn<string>(
+                name: "PaymentMethods",
+                table: "WeavingSalesContract",
                 nullable: true);
 
             migrationBuilder.AddColumn<double>(
-                name: "MaterialPrice",
+                name: "PriceDP",
                 table: "WeavingSalesContract",
                 nullable: false,
                 defaultValue: 0.0);
 
-            migrationBuilder.AddColumn<string>(
-                name: "MaterialTags",
-                table: "WeavingSalesContract",
-                maxLength: 255,
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "ProductTypeCode",
-                table: "WeavingSalesContract",
-                maxLength: 25,
-                nullable: true);
-
-            migrationBuilder.AddColumn<int>(
-                name: "ProductTypeId",
+            migrationBuilder.AddColumn<double>(
+                name: "precentageDP",
                 table: "WeavingSalesContract",
                 nullable: false,
-                defaultValue: 0);
+                defaultValue: 0.0);
 
-            migrationBuilder.AddColumn<string>(
-                name: "ProductTypeName",
-                table: "WeavingSalesContract",
-                maxLength: 255,
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "BuyerJob",
+            migrationBuilder.AddColumn<double>(
+                name: "Claim",
                 table: "SpinningSalesContract",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "MaterialCode",
-                table: "SpinningSalesContract",
-                maxLength: 25,
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "MaterialConstructionCode",
-                table: "SpinningSalesContract",
-                maxLength: 25,
                 nullable: true);
 
             migrationBuilder.AddColumn<int>(
-                name: "MaterialConstructionId",
+                name: "Day",
                 table: "SpinningSalesContract",
                 nullable: false,
                 defaultValue: 0);
 
             migrationBuilder.AddColumn<string>(
-                name: "MaterialConstructionName",
+                name: "DownPayments",
                 table: "SpinningSalesContract",
-                maxLength: 255,
                 nullable: true);
 
             migrationBuilder.AddColumn<int>(
-                name: "MaterialID",
+                name: "LatePayment",
+                table: "SpinningSalesContract",
+                nullable: false,
+                defaultValue: 0);
+
+            migrationBuilder.AddColumn<int>(
+                name: "LateReturn",
                 table: "SpinningSalesContract",
                 nullable: false,
                 defaultValue: 0);
 
             migrationBuilder.AddColumn<string>(
-                name: "MaterialName",
+                name: "PaymentMethods",
                 table: "SpinningSalesContract",
-                maxLength: 255,
                 nullable: true);
 
             migrationBuilder.AddColumn<double>(
-                name: "MaterialPrice",
+                name: "PriceDP",
                 table: "SpinningSalesContract",
                 nullable: false,
                 defaultValue: 0.0);
 
-            migrationBuilder.AddColumn<string>(
-                name: "MaterialTags",
-                table: "SpinningSalesContract",
-                maxLength: 255,
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "ProductTypeCode",
-                table: "SpinningSalesContract",
-                maxLength: 25,
-                nullable: true);
-
-            migrationBuilder.AddColumn<int>(
-                name: "ProductTypeId",
+            migrationBuilder.AddColumn<double>(
+                name: "precentageDP",
                 table: "SpinningSalesContract",
                 nullable: false,
-                defaultValue: 0);
+                defaultValue: 0.0);
 
-            migrationBuilder.AddColumn<string>(
-                name: "ProductTypeName",
-                table: "SpinningSalesContract",
-                maxLength: 255,
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "BuyerJob",
+            migrationBuilder.AddColumn<double>(
+                name: "Claim",
                 table: "FinishingPrintingSalesContracts",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "ProductTypeCode",
-                table: "FinishingPrintingSalesContracts",
-                maxLength: 25,
                 nullable: true);
 
             migrationBuilder.AddColumn<int>(
-                name: "ProductTypeId",
+                name: "Day",
                 table: "FinishingPrintingSalesContracts",
                 nullable: false,
                 defaultValue: 0);
 
             migrationBuilder.AddColumn<string>(
-                name: "ProductTypeName",
+                name: "DownPayments",
                 table: "FinishingPrintingSalesContracts",
-                maxLength: 255,
                 nullable: true);
 
+            migrationBuilder.AddColumn<int>(
+                name: "LatePayment",
+                table: "FinishingPrintingSalesContracts",
+                nullable: false,
+                defaultValue: 0);
+
+            migrationBuilder.AddColumn<int>(
+                name: "LateReturn",
+                table: "FinishingPrintingSalesContracts",
+                nullable: false,
+                defaultValue: 0);
+
+            migrationBuilder.AddColumn<string>(
+                name: "PaymentMethods",
+                table: "FinishingPrintingSalesContracts",
+                nullable: true);
+
+            migrationBuilder.AddColumn<double>(
+                name: "PriceDP",
+                table: "FinishingPrintingSalesContracts",
+                nullable: false,
+                defaultValue: 0.0);
+
+            migrationBuilder.AddColumn<double>(
+                name: "precentageDP",
+                table: "FinishingPrintingSalesContracts",
+                nullable: false,
+                defaultValue: 0.0);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "BuyerJob",
+                name: "Claim",
                 table: "WeavingSalesContract");
 
             migrationBuilder.DropColumn(
-                name: "MaterialCode",
+                name: "Day",
                 table: "WeavingSalesContract");
 
             migrationBuilder.DropColumn(
-                name: "MaterialID",
+                name: "DownPayments",
                 table: "WeavingSalesContract");
 
             migrationBuilder.DropColumn(
-                name: "MaterialName",
+                name: "LatePayment",
                 table: "WeavingSalesContract");
 
             migrationBuilder.DropColumn(
-                name: "MaterialPrice",
+                name: "LateReturn",
                 table: "WeavingSalesContract");
 
             migrationBuilder.DropColumn(
-                name: "MaterialTags",
+                name: "PaymentMethods",
                 table: "WeavingSalesContract");
 
             migrationBuilder.DropColumn(
-                name: "ProductTypeCode",
+                name: "PriceDP",
                 table: "WeavingSalesContract");
 
             migrationBuilder.DropColumn(
-                name: "ProductTypeId",
+                name: "precentageDP",
                 table: "WeavingSalesContract");
 
             migrationBuilder.DropColumn(
-                name: "ProductTypeName",
-                table: "WeavingSalesContract");
-
-            migrationBuilder.DropColumn(
-                name: "BuyerJob",
+                name: "Claim",
                 table: "SpinningSalesContract");
 
             migrationBuilder.DropColumn(
-                name: "MaterialCode",
+                name: "Day",
                 table: "SpinningSalesContract");
 
             migrationBuilder.DropColumn(
-                name: "MaterialConstructionCode",
+                name: "DownPayments",
                 table: "SpinningSalesContract");
 
             migrationBuilder.DropColumn(
-                name: "MaterialConstructionId",
+                name: "LatePayment",
                 table: "SpinningSalesContract");
 
             migrationBuilder.DropColumn(
-                name: "MaterialConstructionName",
+                name: "LateReturn",
                 table: "SpinningSalesContract");
 
             migrationBuilder.DropColumn(
-                name: "MaterialID",
+                name: "PaymentMethods",
                 table: "SpinningSalesContract");
 
             migrationBuilder.DropColumn(
-                name: "MaterialName",
+                name: "PriceDP",
                 table: "SpinningSalesContract");
 
             migrationBuilder.DropColumn(
-                name: "MaterialPrice",
+                name: "precentageDP",
                 table: "SpinningSalesContract");
 
             migrationBuilder.DropColumn(
-                name: "MaterialTags",
-                table: "SpinningSalesContract");
-
-            migrationBuilder.DropColumn(
-                name: "ProductTypeCode",
-                table: "SpinningSalesContract");
-
-            migrationBuilder.DropColumn(
-                name: "ProductTypeId",
-                table: "SpinningSalesContract");
-
-            migrationBuilder.DropColumn(
-                name: "ProductTypeName",
-                table: "SpinningSalesContract");
-
-            migrationBuilder.DropColumn(
-                name: "BuyerJob",
+                name: "Claim",
                 table: "FinishingPrintingSalesContracts");
 
             migrationBuilder.DropColumn(
-                name: "ProductTypeCode",
+                name: "Day",
                 table: "FinishingPrintingSalesContracts");
 
             migrationBuilder.DropColumn(
-                name: "ProductTypeId",
+                name: "DownPayments",
                 table: "FinishingPrintingSalesContracts");
 
             migrationBuilder.DropColumn(
-                name: "ProductTypeName",
+                name: "LatePayment",
                 table: "FinishingPrintingSalesContracts");
 
+            migrationBuilder.DropColumn(
+                name: "LateReturn",
+                table: "FinishingPrintingSalesContracts");
+
+            migrationBuilder.DropColumn(
+                name: "PaymentMethods",
+                table: "FinishingPrintingSalesContracts");
+
+            migrationBuilder.DropColumn(
+                name: "PriceDP",
+                table: "FinishingPrintingSalesContracts");
+
+            migrationBuilder.DropColumn(
+                name: "precentageDP",
+                table: "FinishingPrintingSalesContracts");
         }
     }
 }

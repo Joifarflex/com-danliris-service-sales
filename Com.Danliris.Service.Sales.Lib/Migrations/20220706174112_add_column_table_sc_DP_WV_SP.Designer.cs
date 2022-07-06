@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Com.Danliris.Service.Sales.Lib.Migrations
 {
     [DbContext(typeof(SalesDbContext))]
-    [Migration("20220624091957_Add-table-sales-contract-SP")]
-    partial class AddtablesalescontractSP
+    [Migration("20220706174112_add_column_table_sc_DP_WV_SP")]
+    partial class add_column_table_sc_DP_WV_SP
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
