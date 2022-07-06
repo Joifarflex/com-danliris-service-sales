@@ -61,6 +61,7 @@ namespace Com.Danliris.Service.Sales.WebApi.Controllers
                 {
                     string BuyerUri = "master/buyers";
                     string BankUri = "master/account-banks";
+                    string ProductTypeUri = "master/product-types";
                     //string CurrenciesUri = "master/currencies";
                     string Token = Request.Headers["Authorization"].First().Replace("Bearer ", "");
 
@@ -78,6 +79,8 @@ namespace Com.Danliris.Service.Sales.WebApi.Controllers
                         viewModel.Buyer.Address = buyer.TryGetValue("Address", out json) ? (json != null ? json.ToString() : "") : "";
                         viewModel.Buyer.Contact = buyer.TryGetValue("Contact", out json) ? (json != null ? json.ToString() : "") : "";
                         viewModel.Buyer.Country = buyer.TryGetValue("Country", out json) ? (json != null ? json.ToString() : "") : "";
+                        viewModel.Buyer.NIK = buyer.TryGetValue("NIK", out json) ? (json != null ? json.ToString() : "") : "";
+                        viewModel.Buyer.Job = buyer.TryGetValue("Job", out json) ? (json != null ? json.ToString() : "") : "";
                     }
 
                     /* Get Agent */
@@ -117,15 +120,25 @@ namespace Com.Danliris.Service.Sales.WebApi.Controllers
 
                     }
 
+                    /* Get Product Type */
+                    var responseProductType = HttpClientService.GetAsync($@"{APIEndpoint.Core}{ProductTypeUri}/" + viewModel.ProductType.Id).Result.Content.ReadAsStringAsync();
+                    Dictionary<string, object> resultProductType = JsonConvert.DeserializeObject<Dictionary<string, object>>(response.Result);
+                    object jsonProductType;
+                    if (resultProductType.TryGetValue("data", out jsonProductType))
+                    {
+                        Dictionary<string, object> productType = JsonConvert.DeserializeObject<Dictionary<string, object>>(jsonProductType.ToString());
+                        viewModel.ProductType.Name = productType.TryGetValue("Name", out jsonProductType) ? (jsonProductType != null ? jsonProductType.ToString() : "") : "";
+                    }
+
                     /* Get Currencies */
                     //var responseCurrencies = httpClient.GetAsync($@"{APIEndpoint.Core}{CurrenciesUri}/" + viewModel.AccountBank.Currency.Id).Result.Content.ReadAsStringAsync();
                     //Dictionary<string, object> resultCurrencies = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseCurrencies.Result);
                     //var jsonCurrencies = resultCurrencies.Single(p => p.Key.Equals("data")).Value;
                     //Dictionary<string, object> currencies = JsonConvert.DeserializeObject<Dictionary<string, object>>(jsonCurrencies.ToString());
-                    
+
                     if (viewModel.Buyer.Type != "Ekspor")
                     {
-                        SpinningSalesContractModelPDFTemplate PdfTemplate = new SpinningSalesContractModelPDFTemplate();
+                        NewSpinningSalesContractPdftemplate PdfTemplate = new NewSpinningSalesContractPdftemplate();
                         MemoryStream stream = PdfTemplate.GeneratePdfTemplate(viewModel, timeoffsset);
                         return new FileStreamResult(stream, "application/pdf")
                         {
