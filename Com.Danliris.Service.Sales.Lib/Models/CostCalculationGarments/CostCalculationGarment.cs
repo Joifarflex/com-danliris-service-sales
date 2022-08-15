@@ -32,6 +32,10 @@ namespace Com.Danliris.Service.Sales.Lib.Models.CostCalculationGarments
         public string Section { get; set; }
         [MaxLength(255)]
         public string SectionName { get; set; }
+        [MaxLength(255)]
+        public string ApprovalCC { get; set; }
+        [MaxLength(255)]
+        public string ApprovalRO { get; set; }
         [MaxLength(50)]
         public string UOMID { get; set; }
         [MaxLength(50)]
