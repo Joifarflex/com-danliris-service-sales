@@ -118,10 +118,10 @@ namespace Com.Danliris.Service.Sales.Lib.ViewModels.Weaving
             //if (ProductType == null || ProductType.Id.Equals(0))
             //    yield return new ValidationResult("Jenis Produk harus diisi", new List<string> { "ProductTypeId" });
 
-            if (this.Day.Equals(null))
-            {
-                yield return new ValidationResult("Hari harus diisi", new List<string> { "Day" });
-            }
+            //if (this.Day.Equals(null))
+            //{
+            //    yield return new ValidationResult("Hari harus diisi", new List<string> { "Day" });
+            //}
 
             if (this.LatePayment.Equals(null))
             {
