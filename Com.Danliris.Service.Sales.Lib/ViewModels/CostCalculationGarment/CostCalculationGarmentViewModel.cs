@@ -39,6 +39,7 @@ namespace Com.Danliris.Service.Sales.Lib.ViewModels.CostCalculationGarment
         public string SectionName { get; set; }
         public string ApprovalCC { get; set; }
         public string ApprovalRO { get; set; }
+        public string ApprovalKadiv { get; set; }
         public int? Quantity { get; set; }
         public string SizeRange { get; set; }
         public double? SMV_Cutting { get; set; }

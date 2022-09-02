@@ -53,6 +53,7 @@ namespace Com.Danliris.Sales.Test.BussinesLogic.DataUtils.Garment.GarmentMerchan
             data.SectionName = "FRANSISKA YULIANI";
             data.ApprovalCC = "FRANSISKA YULIANI";
             data.ApprovalRO = "FRANSISKA YULIANI";
+            data.ApprovalKadiv = "AMUMPUNI";
             data.PreSCId = garmentPreSalesContractData.Id;
             data.PreSCNo = garmentPreSalesContractData.SCNo;
             data.UnitCode = "C2A";
